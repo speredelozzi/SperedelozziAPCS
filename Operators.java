@@ -113,6 +113,34 @@ class Operators {
 // System.out.println(sentence2);
 // System.out.println(sentence3);
 
+// // loan interest calculator
+// int loanAmount = 20000;
+// double interestRate = .03;
+// int loanPaybackPeriod = 60;
+// double monthlyInterestRate = interestRate / 12;
+// double interestPerMonth = monthlyInterestRate * loanAmount;
+// double totalLoanCost = (interestPerMonth * loanPaybackPeriod) + loanAmount;
+// System.out.println("My interest per month is: " + interestPerMonth);
+// System.out.println("The total loan is: " + totalLoanCost);
+
+// Boolean SO vs $$
+Boolean hasBoyfriend = false;
+Boolean hasJob = true;
+Boolean hasMoney = true;
+
+if(hasBoyfriend) {
+    System.out.println("Cool beans");
+}
+    else {
+        System.out.println("Can anybody find meeeeee somebody to looovvveee");
+    }
+
+if(hasJob || hasMoney) {
+    System.out.println("Life is good my dude");
+}
+    else {
+        System.out.println("Time to marry rich");
+    }
 
     }
-}
+} 
