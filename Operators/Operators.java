@@ -123,24 +123,24 @@ class Operators {
 // System.out.println("My interest per month is: " + interestPerMonth);
 // System.out.println("The total loan is: " + totalLoanCost);
 
-// Boolean SO vs $$
-Boolean hasBoyfriend = false;
-Boolean hasJob = true;
-Boolean hasMoney = true;
+// // Boolean SO vs $$
+// Boolean hasBoyfriend = false;
+// Boolean hasJob = true;
+// Boolean hasMoney = true;
 
-if(hasBoyfriend) {
-    System.out.println("Cool beans");
-}
-    else {
-        System.out.println("Can anybody find meeeeee somebody to looovvveee");
-    }
+// if(hasBoyfriend) {
+//     System.out.println("Cool beans");
+// }
+//     else {
+//         System.out.println("Can anybody find meeeeee somebody to looovvveee");
+//     }
 
-if(hasJob || hasMoney) {
-    System.out.println("Life is good my dude");
-}
-    else {
-        System.out.println("Time to marry rich");
-    }
+// if(hasJob || hasMoney) {
+//     System.out.println("Life is good my dude");
+// }
+//     else {
+//         System.out.println("Time to marry rich");
+//     }
 
     }
 } 
