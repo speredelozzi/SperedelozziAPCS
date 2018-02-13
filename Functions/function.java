@@ -86,19 +86,23 @@ class ValidationUtils {
 
     public static Boolean isValidBoolean(Scanner scan) {
         try {
-            String s = scan.nextLine();
-            return s.equals("f");
-            return s.equals("t");
-            return s.equals("T");
-            return s.equals("F");
-            return s.equals("true");
-            return s.equals("false");
-            return s.equals("True");
-            return s.equals("False");
+            String s = scan.nextLine().toLowerCase();
+            return (
+                s.equals("f") ||
+                s.equals("t") ||
+                s.equals("true") ||
+                s.equals("false") ||
+                s.equals("0") ||
+                s.equals("1")
+            );
+           
         }
         catch(Exception e) {
             return false; //error. user input is not a valid Boolean
         }
-        return true; //no error. user input is a valid Boolean
+        // return true; //no error. user input is a valid Boolean
+        // while(true)
+        //     if (s.equals("t") || s.equals("true") || s.equals("1"))
+
     }
 }
