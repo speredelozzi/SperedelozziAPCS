@@ -95,14 +95,9 @@ class ValidationUtils {
                 s.equals("0") ||
                 s.equals("1")
             );
-           
         }
         catch(Exception e) {
-            return false; //error. user input is not a valid Boolean
-        }
-        // return true; //no error. user input is a valid Boolean
-        // while(true)
-        //     if (s.equals("t") || s.equals("true") || s.equals("1"))
-
+            return false; //error. user input is not a valid Boolean 
+        } 
     }
 }
