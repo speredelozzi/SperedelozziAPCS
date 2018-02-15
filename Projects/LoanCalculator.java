@@ -31,7 +31,20 @@ public class LoanCalculator{
     }
 
     public static void flatInterest() {
-        System.out.println("Still a stub function. Not yet implemented"); //Delete this once you implement the function
+        Scanner scan;
+        while(true) {
+            scan = new Scanner(System.in);
+            printLoanRequest();
+            if(scan.hasNextDouble()) {
+                loanAmt = scan.nextDouble();
+                if(0 < loanAmt) {
+                    break;
+                }
+            }
+        }
+        System.out.println("Enter loan amount: $" + loanAmt);
+
+        // System.out.println("Still a stub function. Not yet implemented"); //Delete this once you implement the function
         //Calculate flat interest and print it out here
     }
 
