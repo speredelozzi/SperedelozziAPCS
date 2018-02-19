@@ -22,19 +22,9 @@ public class LoanCalculator{
         }
         System.out.println("You selected mode " + mode);
 
-        if(mode == 1) {
-            flatInterest();
-        }
-        else {
-            System.out.println("Other modes not yet supported."); //Replace this with calls to your appropriate functions            
-        }
-    }
-
-    public static void flatInterest() {
-        Scanner scan;
         while(true) {
             scan = new Scanner(System.in);
-            printLoanRequest();
+            System.out.print("Enter loan amount: $" + loanAmt);
             if(scan.hasNextDouble()) {
                 loanAmt = scan.nextDouble();
                 if(0 < loanAmt) {
@@ -42,12 +32,56 @@ public class LoanCalculator{
                 }
             }
         }
-        System.out.println("Enter loan amount: $" + loanAmt);
+        while(true) {
+            scan = new Scanner(System.in);
+            System.out.print("Enter loan term: " + loanTerm);
+            if(scan.hasNextInt()) {
+                loanTerm = scan.nextInt();
+                if(0 < loanTerm) {
+                    break;
+                }
+            }
+        }
+        while(true) {
+            scan = new Scanner(System.in);
+            System.out.print("Enter interest rate (%): " + interestRate);
+            if(scan.hasNextDouble()) {
+                interestRate = scan.nextDouble();
+                if(0 < interestRate && interestRate < 100) {
+                    break;
+                }
+            }
+        }
+        if(mode == 1) {
+            flatInterest();
+        }
+        else if(mode == 2) {
+            compoundingNoInterest();
+        }
+        else if(mode == 3) {
+            compoundingInterest();
+        }
 
-        // System.out.println("Still a stub function. Not yet implemented"); //Delete this once you implement the function
-        //Calculate flat interest and print it out here
+    }
+    public static void flatInterest() {
+        double realInterest = interestRate / 100;
+        double interest = loanAmt * loanTerm * realInterest;
+        double totalPayment = interest + loanAmt;
+        System.out.println(" ");
+        System.out.println("Original loan amount: $" + loanAmt);
+        System.out.println("Loan term: " + loanTerm + " years");
+        System.out.println("Interest Rate: " + interestRate + "%");
+        System.out.println("Interest to be paid: $" + interest);
+        System.out.println("Total loan payment: $" + totalPayment);
     }
 
+        //Calculate flat interest and print it out here
+    public static void compoundingNoInterest() {
+
+    }
+    public static void compoundingInterest() {
+
+    }
     public static void printModeStatement() {
         System.out.print(
             "Select an interest calculation mode:\n"
