@@ -61,26 +61,45 @@ public class LoanCalculator{
         else if(mode == 3) {
             compoundingInterest();
         }
-
     }
     public static void flatInterest() {
         double realInterest = interestRate / 100;
         double interest = loanAmt * loanTerm * realInterest;
-        double totalPayment = interest + loanAmt;
+        double loanTotal = interest + loanAmt;
         System.out.println(" ");
         System.out.println("Original loan amount: $" + loanAmt);
         System.out.println("Loan term: " + loanTerm + " years");
         System.out.println("Interest Rate: " + interestRate + "%");
         System.out.println("Interest to be paid: $" + interest);
-        System.out.println("Total loan payment: $" + totalPayment);
+        System.out.println("Total loan payment: $" + loanTotal);
     }
-
-        //Calculate flat interest and print it out here
     public static void compoundingNoInterest() {
+        // double loanTotal = -1;
+        // double monthsRemaining = (loanTerm * 12) - 1;
+        // while(monthsRemaining > 0) {
+        //     double interest = loanTotal * (interestRate / 12);
+        //     loanTotal = loanTotal + interest;
+        // }
+        // double interest = loanTotal - loanAmt;
+        
 
+        // System.out.println(" ");
+        // System.out.println("Original loan amount: $" + loanAmt);
+        // System.out.println("Loan term: " + loanTerm + " years");
+        // System.out.println("Interest Rate: " + interestRate + "%");
+        // System.out.println("Interest to be paid: $" + interest);
+        // System.out.println("Total loan payment: $" + loanTotal);
     }
     public static void compoundingInterest() {
 
+        // System.out.println(" ");
+        // System.out.println("Original loan amount: $" + loanAmt);
+        // System.out.println("Loan term: " + loanTerm + " years");
+        // System.out.println("Interest Rate: " + interestRate + "%");
+        // System.out.println("Minimum monthly payment: $");
+        // System.out.println("Payment for the final month: $");
+        // System.out.println("Interest to be paid: $" + interest);
+        // System.out.println("Total loan payment: $" + totalPayment);
     }
     public static void printModeStatement() {
         System.out.print(
