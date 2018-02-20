@@ -24,7 +24,7 @@ public class LoanCalculator{
 
         while(true) {
             scan = new Scanner(System.in);
-            System.out.print("Enter loan amount: $" + loanAmt);
+            System.out.print("Enter loan amount: $");
             if(scan.hasNextDouble()) {
                 loanAmt = scan.nextDouble();
                 if(0 < loanAmt) {
@@ -34,7 +34,7 @@ public class LoanCalculator{
         }
         while(true) {
             scan = new Scanner(System.in);
-            System.out.print("Enter loan term: " + loanTerm);
+            System.out.print("Enter loan term: ");
             if(scan.hasNextInt()) {
                 loanTerm = scan.nextInt();
                 if(0 < loanTerm) {
@@ -44,7 +44,7 @@ public class LoanCalculator{
         }
         while(true) {
             scan = new Scanner(System.in);
-            System.out.print("Enter interest rate (%): " + interestRate);
+            System.out.print("Enter interest rate (%): ");
             if(scan.hasNextDouble()) {
                 interestRate = scan.nextDouble();
                 if(0 < interestRate && interestRate < 100) {
