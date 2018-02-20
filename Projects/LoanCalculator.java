@@ -18,8 +18,7 @@ public class LoanCalculator{
                     break; //Valid input has been provided. Break out of the while loop
                 }
             }
-            //If it reaches here, the input was invalid. Loop again.
-        }
+        }    //If it reaches here, the input was invalid. Loop again.
         System.out.println("You selected mode " + mode);
 
         while(true) {
@@ -74,14 +73,16 @@ public class LoanCalculator{
         System.out.println("Total loan payment: $" + loanTotal);
     }
     public static void compoundingNoInterest() {
-        // double loanTotal = -1;
-        // double monthsRemaining = (loanTerm * 12) - 1;
+        // double monthsRemaining = loanTerm * 12;
         // while(monthsRemaining > 0) {
-        //     double interest = loanTotal * (interestRate / 12);
-        //     loanTotal = loanTotal + interest;
+        //     double interest = loanTotal * (interestRate / 12) * monthsRemaining;
+        //     double loanTotal = loanTotal + interest;
+        //     monthsRemaining--;
+        //     if(monthsRemaining == 0) {
+        //         break;
+        //     }
         // }
         // double interest = loanTotal - loanAmt;
-        
 
         // System.out.println(" ");
         // System.out.println("Original loan amount: $" + loanAmt);
