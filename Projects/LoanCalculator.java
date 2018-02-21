@@ -77,12 +77,10 @@ public class LoanCalculator{
         // while(monthsRemaining > 0) {
         //     double interest = loanTotal * (interestRate / 12) * monthsRemaining;
         //     double loanTotal = loanTotal + interest;
-        //     monthsRemaining--;
-        //     if(monthsRemaining == 0) {
+        //     double interest = loanTotal - loanAmt;
+        //     monthsRemaining -= 1;
         //         break;
-        //     }
         // }
-        // double interest = loanTotal - loanAmt;
 
         // System.out.println(" ");
         // System.out.println("Original loan amount: $" + loanAmt);
@@ -92,6 +90,9 @@ public class LoanCalculator{
         // System.out.println("Total loan payment: $" + loanTotal);
     }
     public static void compoundingInterest() {
+        // double ratePerMonth = interestRate /12;
+        // double monthlyPayment = 1 + loanAmt * (ratePerMonth / (1 - Math.pow((1 + ratePerMonth), (loanTerm * -12))));
+        // while(outstandingBalance > 0)
 
         // System.out.println(" ");
         // System.out.println("Original loan amount: $" + loanAmt);
