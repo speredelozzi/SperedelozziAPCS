@@ -79,13 +79,14 @@ public class LoanCalculator{
     public static void compoundingNoInterest() {
         double monthsRemaining = loanTerm * 12;
         double realInterest = interestRate / 100;
-        double interest = loanAmt * loanTerm * realInterest;
         while(monthsRemaining > 0) {
             interest = loanTotal * (realInterest / 12);
             loanTotal = loanTotal + interest;
             monthsRemaining -= 1;
         }
         double loanTotal = interest + loanAmt;
+        System.out.println(monthsRemaining);
+        System.out.println(realInterest);
         System.out.println(" ");
         System.out.println("Original loan amount: $" + loanAmt);
         System.out.println("Loan term: " + loanTerm + " years");
