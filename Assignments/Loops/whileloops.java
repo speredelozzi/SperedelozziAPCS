@@ -1,4 +1,4 @@
-class Loops {
+class whileLoops {
     public static void main(String[] args) {
         // int n = 1;
         // while(n < 100) {
