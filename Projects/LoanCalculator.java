@@ -7,7 +7,8 @@ public class LoanCalculator{
     public static double interestRate = -1;
     public static double loanTotal = -1;
     public static double interest = 0;
-    public static double monthsRemaining = -1;
+    public static int monthsRemaining = -1;
+    public static double finalMonthPayment = -1;
 
     public static void main(String[] args) {
         //Read in the loan calculation mode
@@ -58,8 +59,9 @@ public class LoanCalculator{
             flatInterest();
         }
         else if(mode == 2) {
-            compoundingNoInterest();
+            compoundingNoPayments();
         }
+
         else if(mode == 3) {
             compoundingInterest();
         }
@@ -75,7 +77,7 @@ public class LoanCalculator{
         System.out.println("Interest to be paid: $" + interest);
         System.out.println("Total loan payment: $" + loanTotal);
     }
-    public static void compoundingNoInterest() {
+    public static void compoundingNoPayments() {
         double monthsRemaining = loanTerm * 12;
         double realInterest = interestRate / 100;
         loanTotal = loanAmt;
@@ -96,16 +98,20 @@ public class LoanCalculator{
         double realInterest = interestRate / 100;
         double ratePerMonth = realInterest / 12;
         loanTotal = loanAmt;
-        double monthlyPayment = 1 + loanAmt * (ratePerMonth / (1 - Math.pow((1 + ratePerMonth), (loanTerm * -12))));
+        double monthlyPayment = loanAmt * (ratePerMonth / (1 - Math.pow((1 + ratePerMonth), (loanTerm * -12))));
         double outstandingBalance = loanAmt;
         while(outstandingBalance > 0) {
             interest = outstandingBalance * ratePerMonth;
             outstandingBalance = interest + outstandingBalance - monthlyPayment;
             loanTotal = loanTotal + interest;
+            finalMonthPayment = loanTotal + monthlyPayment - (monthlyPayment * 12 * loanTerm);
         }
         double totalInterest = loanTotal - loanAmt;
-        
-        double finalMonthPayment = loanTotal - (monthlyPayment * 12 * loanTerm);
+        System.out.println(loanTotal);
+        System.out.println(monthlyPayment);
+        System.out.println(loanTerm);
+        System.out.println(monthlyPayment * 12 *loanTerm);
+
         System.out.println(" ");
         System.out.println("Original loan amount: $" + loanAmt);
         System.out.println("Loan term: " + loanTerm + " years");
