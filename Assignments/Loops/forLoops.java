@@ -42,14 +42,17 @@ class forLoops {
         //     System.out.println(n);
         // }
 
-        // Scanner scan;
-        // for(int i = 0; i < 4; ) {
-        //     scan = new Scanner(System.in);
-        //     System.out.println("Enter a valid int: ");
-        //     if(scan.hasNextInt()) {
-        //         i = scan.nextInt();
-        //         if(isValidInt())
-        //     }            
-        // }
+        Scanner scan;
+        for(int i = 1; i < 4; i++) {
+            scan = new Scanner(System.in);
+            System.out.println("Enter a valid int: ");
+            if(scan.hasNextInt()) {
+                i = scan.nextInt();
+                System.out.println("Success");
+            }
+            else if(i == 3) {
+                System.out.println("You fail");
+            }
+        }
     }
 }
