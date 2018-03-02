@@ -8,6 +8,10 @@ class Plinko {
     public static final int[] VALUES = {1, 3, 2, 0, 5, 0, 2, 3, 1};
 
     public static int mode = -1;
+    public static int discNum = -1;
+    public static int discSlot = -1;
+    public static int dicsSlotReal = -1;
+
 
     public static void main(String[] args) {
         Scanner scan;
@@ -19,16 +23,28 @@ class Plinko {
             if(scan.hasNextInt()) {
                 mode = scan.nextInt();
                 if(mode == SINGLE_DISC) {
-                    System.out.println("Mode not yet implemented");
+                    // basicPlinko(true);
+                    // System.out.println("Mode not yet implemented");
                 }
                 else if(mode == MULTI_DISC) {
-                    System.out.println("Mode not yet implemented");
+                    // basicPlinko(false);
+                    // System.out.println("Mode not yet implemented");
                 }
                 else if(mode == TERMINATE) {
                     System.out.println("Goodbye");
                     break;
                 } else {
                     continue;
+                }
+            }
+            while(true) {
+                scan = new Scanner(System.in);
+                System.out.print("Pick a slot to drop the disc(s) (0-8): ");
+                if(scan.hasNextInt()) {
+                    discSlot = scan.nextInt();
+                    if( 0 <= discSlot && discSlot < 9 ) {
+                        break;
+                    }
                 }
             }
         }
@@ -52,9 +68,9 @@ class Plinko {
         else {
             System.out.print(" ");
         }
-        return position;
     }
     System.out.print("\n");
+    return position;
     }
 
     public static Boolean isEven(int x) {
