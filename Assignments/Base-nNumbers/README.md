@@ -25,7 +25,7 @@
     * AB
         - 171
     * BEEF
-        - 7919
+        - 48879
 
 3. Write the Hexadecimal (Base-16) number corresponding to the following Decimal numbers:
     * 16
