@@ -49,6 +49,13 @@ class Plinko {
             }
         }
     }
+    // public static void basicPlinko(true) {
+        
+    //     for(i = 1, i < 12, i++) {
+
+    //     }
+    // }
+
 
     public static int runOddRow(int position) {
         //Modify the position.
@@ -58,7 +65,7 @@ class Plinko {
     }
 
     public static int runEvenRow(int position) {
-         for(int i = 0; i <= 16; i++) {
+        for(int i = 0; i <= 16; i++) {
         if(position == i) {
             System.out.print("O");
         }
