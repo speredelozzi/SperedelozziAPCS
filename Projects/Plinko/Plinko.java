@@ -23,11 +23,13 @@ class Plinko {
             if(scan.hasNextInt()) {
                 mode = scan.nextInt();
                 if(mode == SINGLE_DISC) {
-                    // basicPlinko(true);
+                    basicPlinko(true);
+                    // printOddRow(int);
+                    // printEvenRow(int);
                     // System.out.println("Mode not yet implemented");
                 }
                 else if(mode == MULTI_DISC) {
-                    // basicPlinko(false);
+                    basicPlinko(false);
                     // System.out.println("Mode not yet implemented");
                 }
                 else if(mode == TERMINATE) {
@@ -49,33 +51,44 @@ class Plinko {
             }
         }
     }
-    // public static void basicPlinko(true) {
-        
-    //     for(i = 1, i < 12, i++) {
-
-    //     }
-    // }
-
-
-    public static int runOddRow(int position) {
-        //Modify the position.
-        //Print the visualization of the row if it's single disc mode.
-
-        return position;
+    public static void basicPlinko(Boolean isSingleDisc) {
+        for(int i = 1; i <= 12; i++) {
+            System.out.println("single disc mode");
+        }
+        for(int i = 1; i >= 1; i++) {
+            System.out.println("multi");
+        }
     }
 
-    public static int runEvenRow(int position) {
+    public static int printOddRow(int position) {
         for(int i = 0; i <= 16; i++) {
-        if(position == i) {
-            System.out.print("O");
+            if(position == i) {
+                System.out.print("O");
+            }
+            else if (isEven(i)) {
+                System.out.print(" ");
+            }
+            else {
+                System.out.print(".");
+            }
         }
-        else if(isEven(i)) {
-            System.out.print(".");
-        }
-        else {
-            System.out.print(" ");
-        }
+        //Print the visualization of the row if it's single disc mode.
+    System.out.print("\n");
+    return position;
     }
+
+    public static int printEvenRow(int position) {
+        for(int i = 0; i <= 16; i++) {
+            if(position == i) {
+                System.out.print("O");
+            }
+            else if(isEven(i)) {
+                System.out.print(".");
+            }
+            else {
+                System.out.print(" ");
+            }
+        }
     System.out.print("\n");
     return position;
     }
