@@ -1,9 +1,10 @@
-class ScopeTest {
+ class ScopeTest {
+
         public static String message = "Hello";
         public static Boolean shouldLoop = false;
+        public static int i;
 
         public static void main(String args[]) {
-            // int i;
             // while(i <= 10) {
             //     int n = i * 2;
             //     System.out.println(n);
@@ -25,14 +26,14 @@ class ScopeTest {
             //     }
             //     i++;
             // }
-            // String message = "Hello World";
-            // for(int i = 0; i < message.length(); i++) {
-            //     if(message.charAt(i) == 'W') {
-            //         break;
-            //     }
-            // }
-            // System.out.println("W found at index " + i);
-            // }
+            String message = "Hello World";
+            for(int i = 0; i < message.length(); i++) {
+                if(message.charAt(i) == 'W') {
+                    break;
+                }
+            }
+            int i = 6;
+            System.out.println("W found at index " + i);
         }
-}
+    }
         
