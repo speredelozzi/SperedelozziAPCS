@@ -9,10 +9,12 @@ class Plinko {
     public static int[] finalamt = {0,0,0,0,0,0,0,0};
 
     public static int mode = -1;
-    public static int discNum = 20;
+    public static int discNum = -1;
+    public static int discNum1 = -1;
     public static int discSlot = -1;
+    public static int discSlotReal = -1;
     public static int row = -1;
-    public static int position = 6;
+    public static int position = -1;
 
     public static void main(String[] args) {
         Scanner scan;
@@ -24,11 +26,12 @@ class Plinko {
             if(scan.hasNextInt()) {
                 mode = scan.nextInt();
                 if(mode == SINGLE_DISC) {
-                    discNumRequest(position);
+                    int position = discNumRequest(discSlotReal);
                     singleDisc();
                 }
                 else if(mode == MULTI_DISC) {
-                    discNumRequest(position);
+                    int position = discNumRequest(discSlotReal);
+                    int discNum = multiDiscRequest(discNum1);
                     multiDisc();
                 }
                 else if(mode == TERMINATE) {
@@ -40,7 +43,7 @@ class Plinko {
             }
         }
     }
-    public static int discNumRequest(int position) {
+    public static int discNumRequest(int discSlotReal) {
         Scanner scan;
         while(true) {
             scan = new Scanner(System.in);
@@ -48,8 +51,8 @@ class Plinko {
             if(scan.hasNextInt()) {
                 discSlot = scan.nextInt();
                 if( 0 <= discSlot && discSlot < 9 ) {
-                    position = discSlot * 2;
-                    return position;
+                    discSlotReal = discSlot * 2;
+                    return discSlotReal;
                 }
             }
         }
@@ -76,22 +79,25 @@ class Plinko {
                 printOddRow();
             }
         }
-        System.out.println("You landed in position " + position + " and earned " + VALUES[position/2] + " points!" );
+    System.out.println("You landed in position " + position/2 + " and earned " + VALUES[position/2] + " points!" );
     }
 
-    public static void multiDisc() {
+    public static int multiDiscRequest(int discNum1) {
         Scanner scan;
         while(true) {
             scan = new Scanner(System.in);
             System.out.print("Pick an amount of discs: ");
             if(scan.hasNextInt()) {
-                discNum = scan.nextInt();
-                if( 0 < discNum) {
-                    break;
+                discNum1 = scan.nextInt();
+                if( 0 < discNum1) {
+                    return discNum1;
                 }
             }
         }
-        for(int n = 1; n <= discNum; n++) {
+    }
+
+    public static void multiDisc() {
+        for(int n = 0; n <= discNum; n++) {
             for(row = 12; row >= 0; row--) {
                 if(position == 16) {
                     position --;
@@ -128,7 +134,7 @@ class Plinko {
             if(position == i) {
                 System.out.print("O");
             }
-            else if (isEven(i)) {
+            else if (!isEven(i)) {
                 System.out.print(" ");
             }
             else {
@@ -145,10 +151,10 @@ class Plinko {
                 System.out.print("O");
             }
             else if(isEven(i)) {
-                System.out.print(".");
+                System.out.print(" ");
             }
             else {
-                System.out.print(" ");
+                System.out.print(".");
             }
         }
     System.out.print("\n");
