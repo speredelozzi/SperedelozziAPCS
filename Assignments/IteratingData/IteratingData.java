@@ -2,9 +2,9 @@ class IteratingData {
 
     public static void main(String args[]) {
         int[] nums = new int[201];
-        int i = -100;
-        for(int value : nums) {
-            System.out.println(value);
+        nums[0] = -100;
+        for(int i = 0; i < nums.length; i++) {
+            System.out.println(nums[i]);
         }
     }
 }
