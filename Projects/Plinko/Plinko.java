@@ -6,6 +6,7 @@ class Plinko {
     public static final int TERMINATE = 3;
 
     public static final int[] VALUES = {1, 3, 2, 0, 5, 0, 2, 3, 1};
+    public static int[] finalamt = {0,0,0,0,0,0,0,0};
 
     public static int mode = -1;
     public static int discNum = 20;
@@ -90,7 +91,36 @@ class Plinko {
                 }
             }
         }
-        
+        for(int n = 1; n <= discNum; n++) {
+            for(row = 12; row >= 0; row--) {
+                if(position == 16) {
+                    position --;
+                }
+                else if(position == 0) {
+                    position ++;
+                }
+                else if(Math.random() > .5) {
+                    position ++;
+                }
+                else {
+                    position --;
+                }
+            }
+        }
+
+        finalamt[position/2]++;
+        VALUES[position/2]++;
+
+        System.out.println("You landed in position 0: " + finalamt[0] + " times" );
+        System.out.println("You landed in position 1: " + finalamt[1] + " times" );
+        System.out.println("You landed in position 2: " + finalamt[2] + " times" );
+        System.out.println("You landed in position 3: " + finalamt[3] + " times" );
+        System.out.println("You landed in position 4: " + finalamt[4] + " times" );
+        System.out.println("You landed in position 5: " + finalamt[5] + " times" );
+        System.out.println("You landed in position 6: " + finalamt[6] + " times" );
+        System.out.println("You landed in position 7: " + finalamt[7] + " times" );
+        System.out.println("You landed in position 8: " + finalamt[8] + " times" );
+        System.out.println("Total score: " + VALUES);
     }
 
     public static void printOddRow() {
